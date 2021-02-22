@@ -18,7 +18,7 @@
   flex: 1;
   padding: 20rpx;
 }
-.home_cate image{
+.home_cate navigator image{
   width: 100%;
 }
 
@@ -27,19 +27,27 @@
   overflow: hidden;
 }
 .section_title{
+  padding: 10rpx 0;
+}
+.section_title image{
   width: 100%;
 }
 .section_items navigator{
   float: left;
   width: 33.33%;
 }
-.section_items image{
-  vertical-align: middle;   /*底部有白块*/
+.section_items navigator image{
   width: 100%;
   height: 100%;
 }
 
-/* 后四个图片的高度 */
-.section_items image:nth-last-child(-n+4){
+/* 后四个超链接的高度 */
+.section_items navigator:nth-last-child(-n+4){
   height: calc(33.33vw * 386 / 232 / 2);
+  border-left: 10rpx solid #fff;
+}
+/*添加下面的边框， 2，3*/
+.section_items navigator:nth-child(2),
+.section_items navigator:nth-child(3){
+  border-bottom: 10rpx solid #fff;
 }
