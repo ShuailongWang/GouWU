@@ -1,0 +1,10 @@
+/* pages/home/home.wxss */
+
+.cl_swiper{
+  width: 100%;
+  height: 340rpx;
+}
+
+.swiper_image{
+  width: 100%;
+}

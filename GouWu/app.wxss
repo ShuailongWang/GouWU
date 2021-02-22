@@ -1,0 +1,20 @@
+/**app.wxss**/
+
+/*倒入样式*/
+@import "./styles/iconfont.wxss";
+
+/*初始化*/
+page,view,text,swiper,swiper-item,image,navigator{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*主题颜色*/
+page{
+  /*定义主题颜色*/
+  --themeColor:#FD4909;
+
+  /*字体大小*/
+  font-size: 28rpx;
+}

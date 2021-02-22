@@ -1,0 +1,19 @@
+<view class="page_index">
+  <!-- Sratch 开始 -->
+  <SearchInput></SearchInput>
+  <!-- Sratch 结束 -->
+
+  <!-- 轮播图 开始 -->
+  <view class="home_swiper">
+    <swiper class="cl_swiper" autoplay indicator-dots circular interval="1000">
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <navigator>
+          <image class="swiper_image" mode="widthFix" src="{{item.image_src}}" />
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图 结束 -->
+
+</view>
+
