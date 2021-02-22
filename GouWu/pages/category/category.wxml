@@ -1,3 +1,38 @@
-<!--pages/category/category.wxml-->
+
+<view class="category_index">
+  <!--搜索 开始-->
+  <SearchInput></SearchInput>
+  <!--搜索 结束-->
+
+  <!--内容-->
+  <view class="category_connect">
+    <!--左侧菜单-->
+    <scroll-view scroll-y="true" class="left_menu">
+      <view class="menu_item {{currnetIndex==index?'active':''}}" bindtap="clickLeftMenu" data-index="{{index}}" wx:for="{{leftTableList}}" wx:key="*this">
+        {{item}}
+      </view>
+    </scroll-view>
+
+    <!--右侧菜单-->
+    <scroll-view class="right_content" scroll-top="{{rightTopMagrin}}" scroll-y="true">
+      <view class="goods_group" wx:for="{{rightTableList}}" wx:for-item="gr_item" wx:for-index="gr_index" wx:key="cat_id">
+
+        <view class="goods_title">
+          <text class="delimiter">/</text>
+          <text class="goods_title_title">{{gr_item.cat_name}}</text>
+          <text class="delimiter">/</text>
+        </view>
+
+        <view class="goods_list">
+          <navigator  wx:for="{{gr_item.children}}" wx:for-item="it_item" wx:for-index="it_index"  wx:key="cat_id">
+            <image mode="widthFix" src="{{it_item.cat_icon}}" />
+            <view class="goods_item_name">{{it_item.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+</view>
 
 

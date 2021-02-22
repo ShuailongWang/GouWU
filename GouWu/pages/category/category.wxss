@@ -1,1 +1,59 @@
 /* pages/category/category.wxss */
+
+page{
+  height: 100%;
+}
+.category_index{
+  height: 100%;
+}
+.category_connect{
+  height: calc(100vh - 90rpx);
+  display: flex;   /*伸缩盒子*/
+}
+
+/* 左侧内容 */
+.left_menu{
+flex: 2;  /*伸缩盒子*/
+}
+.menu_item{
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+/* 右侧内容 */
+.right_content{
+  flex: 5;  /*伸缩盒子*/
+}
+/* 标题 */
+.goods_title{
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delimiter{
+  color: #cccccc;
+  padding: 0 10rpx;
+}
+
+/* 列表 */
+.goods_list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.goods_list navigator{
+  width: 33.33%;
+  text-align: center;
+}
+.goods_list navigator image{
+  width: 50%;
+}
+
+/* select */
+.active{
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}

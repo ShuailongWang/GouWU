@@ -1,5 +1,6 @@
 // pages/home/home.js
 
+//引入请求
 import { request } from "../../request/index.js";
 
 Page({
