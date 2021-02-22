@@ -79,8 +79,6 @@ Page({
         leftTableList,
         rightTableList
       })
-
-      
   },
 
   //点击事件
