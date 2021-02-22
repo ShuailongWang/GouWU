@@ -15,5 +15,30 @@
   </view>
   <!-- 轮播图 结束 -->
 
+  <!-- 分类列表 开始 -->
+  <view class="home_cate">
+    <navigator wx:for="{{cateList}}" wx:key="name" open-type="{{item.open_type}}">
+      <image mode="widthFix" src="{{item.image_src}}" />
+    </navigator>
+  </view>
+  <!-- 分类列表 结束 -->
+
+  <!--Section 开始-->
+  <view class="home_section">
+    <view wx:for="{{sectionsList}}" wx:for-item="group" wx:for-index="inedx1" wx:key="floor_title">
+      <!--标题-->
+      <view class="section_title">
+        <image mode="widthFix" src="{{group.floor_title.image_src}}" />
+      </view>
+      <!--内容-->
+      <view class="section_items">
+        <navigator wx:for="{{group.product_list}}" wx:for-item="listItems" wx:for-index="itemIndex" wx:key="name" open-type="{{listItems.open_type}}">
+          <image mode="{{itemIndex===0?'widthFix':'scaleToFill'}}" src="{{listItems.image_src}}" />
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!--Section 结束-->
+
 </view>
 
