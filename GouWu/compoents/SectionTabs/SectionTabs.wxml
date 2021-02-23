@@ -1,0 +1,14 @@
+<!--compoents/SectionTabs/SectionTabs.wxml-->
+
+<view class="section_index">
+  <view class="section_title">
+    <view class="title_item {{item.isActive?'active':''}}" wx:for="{{sectionTabList}}" wx:key="id"
+    bindtap="clickSectionButton" data-itemid="{{item.id}}">
+    {{item.value}}
+    </view>
+  </view>
+  
+  <view class="section_content">
+    
+  </view>
+</view>

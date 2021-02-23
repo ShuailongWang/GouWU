@@ -25,13 +25,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    /*
-      根据本地缓存，来判断是否请求数据
-    */ 
+    //根据本地缓存，来判断是否请求数据
    const Cates = wx.getStorageSync('catesListKey')
    if (Cates) {  
     //判断是否过期，5分钟
-    if (Date.now() - Cates.time > 1000*60*5){
+    if (Date.now() - Cates.time > 1000*10*6*5){
       console.log("重新请求")
       //获取分类列表
       this.getCategoryList();

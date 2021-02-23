@@ -46,7 +46,7 @@
   height: calc(33.33vw * 386 / 232 / 2);
   border-left: 10rpx solid #fff;
 }
-/*添加下面的边框， 2，3*/
+/*添加下面的边框，指定的 2，3*/
 .section_items navigator:nth-child(2),
 .section_items navigator:nth-child(3){
   border-bottom: 10rpx solid #fff;

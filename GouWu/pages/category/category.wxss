@@ -13,14 +13,14 @@ page{
 
 /* 左侧内容 */
 .left_menu{
-flex: 2;  /*伸缩盒子*/
+  flex: 2;  /*伸缩盒子*/
 }
 .menu_item{
-  height: 80rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30rpx;
+  height: 80rpx;            /*高度*/
+  display: flex;            /*伸缩盒子*/
+  justify-content: center;  /*水平居中*/
+  align-items: center;      /*垂直居中*/
+  font-size: 30rpx;         /*字号30rpx*/
 }
 
 /* 右侧内容 */
@@ -42,7 +42,7 @@ flex: 2;  /*伸缩盒子*/
 /* 列表 */
 .goods_list{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  /*换行，第一行在上方*/
 }
 .goods_list navigator{
   width: 33.33%;
@@ -54,6 +54,6 @@ flex: 2;  /*伸缩盒子*/
 
 /* select */
 .active{
-  color: var(--themeColor);
-  border-left: 5rpx solid currentColor;
+  color: var(--themeColor);               /*选中的颜色*/
+  border-left: 5rpx solid currentColor;   /*选中后左边红色线， currentColor = --themeColor */
 }
