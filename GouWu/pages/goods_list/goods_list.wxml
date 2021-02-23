@@ -6,7 +6,10 @@
 
   <!--tabs-->
   <SectionTabs sectionTabList="{{sectionTabList}}" bindclickSection="clickSection">
-    aaa
+    <block wx:if="{{selectIndex===0}}">00000</block>
+    <block wx:elif="{{selectIndex===1}}">11111</block>
+    <block wx:elif="{{selectIndex===2}}">2222</block>
+    <block wx:else>3333</block>
   </SectionTabs>
 
 </view>

@@ -22,7 +22,8 @@ Page({
         value:"价格",
         isActive:false
       }
-    ]
+    ],
+    selectIndex : 0
   },
   
   //点击section
@@ -37,7 +38,8 @@ Page({
     }
 
     this.setData({
-      sectionTabList
+      sectionTabList,
+      selectIndex:itemid
     })
   },
 
