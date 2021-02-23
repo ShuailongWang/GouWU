@@ -1,3 +1,7 @@
+
+//引入请求
+import { request } from "../../request/index.js";
+
 // pages/goods_list/goods_list.js
 Page({
 
@@ -23,9 +27,19 @@ Page({
         isActive:false
       }
     ],
-    selectIndex : 0
+    goodsTableList:[]
   },
   
+  //参数
+  QueryParams:{
+    query : "",
+    cid : "",
+    pagenum : 1,
+    pagesize : 10
+  },
+  //总页数
+  totalPages : 1,
+
   //点击section
   clickSection(e){
     //console.log(e);
@@ -38,18 +52,46 @@ Page({
     }
 
     this.setData({
-      sectionTabList,
-      selectIndex:itemid
+      sectionTabList
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     //页面传递参数的地方
-    console.log(options);
+    //console.log(options);
+    this.QueryParams.cid = options.cid;
+
+    //获取列表
+    this.getGoodsList();
   },
+
+  //获取列表
+  getGoodsList(){
+    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/goods/search", data:this.QueryParams})
+    .then(result => {
+      //console.log(result);
+      //获取总条数
+      const total = result.data.message.total;
+      //说去总页数
+      this.totalPages = Math.ceil(total / this.QueryParams.pagesize)
+
+      //关闭下拉loading
+      wx.stopPullDownRefresh()
+
+      //赋值
+      this.setData({
+        goodsTableList : [...this.data.goodsTableList, ...result.data.message.goods]
+      })
+    })
+    .catch(error => {
+      console.log(error);
+      //关闭下拉loading
+      wx.stopPullDownRefresh()
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -83,13 +125,27 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    //下拉刷新
+    this.setData({
+      goodsTableList : []
+    })
+    this.QueryParams.pagenum = 1;
+    this.getGoodsList();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    //上拉刷新，判断是否有下一页
+    if (this.QueryParams.pagenum >= this.totalPages){ //没有下一页数据
+      wx.showToast({
+        title: '没有数据了',
+      })
+    } else {  //还有下一页
+      this.QueryParams.pagenum++; //页码+1
+      this.getGoodsList();
+    }
 
   },
 

@@ -3,5 +3,7 @@
     "SearchInput" : "../../compoents/SearchInput/SearchInput",
     "SectionTabs" : "../../compoents/SectionTabs/SectionTabs"
   },
-  "navigationBarTitleText": "商品列表"
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }
