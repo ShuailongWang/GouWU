@@ -82,7 +82,8 @@ Page({
 
       //赋值
       this.setData({
-        goodsTableList : [...this.data.goodsTableList, ...result.data.message.goods]
+        // goodsTableList : [...this.data.goodsTableList, ...result.data.message.goods]
+        goodsTableList : this.data.goodsTableList.concat(result.data.message.goods)
       })
     })
     .catch(error => {
