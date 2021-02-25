@@ -77,7 +77,7 @@ Page({
     //判断商品id是否在购物车中
     var index = -1;
     for (var i in carList) {
-      if (this.Goods_info.goods_id === carList[i]){
+      if (this.Goods_info.goods_id === carList[i].goods_id){
         index = i;
         break;
       }
@@ -85,6 +85,7 @@ Page({
     //是否存在
     if (index===-1) {
       this.Goods_info.num=1;
+      this.Goods_info.checked = true;
       carList.push(this.Goods_info);
     } else {
       carList[index].num++;

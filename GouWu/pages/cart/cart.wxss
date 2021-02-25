@@ -1,5 +1,8 @@
 /* pages/cart/cart.wxss */
 
+page{
+  padding-bottom: 90rpx;
+}
 
 /* 地址 */
 .adress_button{
@@ -7,4 +10,131 @@
 }
 .adress_button button{
   width: 60%;
+}
+
+.adress_connect{
+  display: flex;
+  padding: 20rpx;
+}
+.user_info{
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+.user_phone{
+  flex: 2;
+  text-align: right;
+}
+
+/* 列表 */
+.car_list{
+
+}
+.car_list_title{
+  font-size: 36rpx;
+  font-weight: 600;
+  color: var(--themeColor);
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  padding: 20rpx;
+}
+.list_content_item{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.content_item_check{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_item_image{
+  flex: 2;
+  height: 200rpx;
+  widows: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_item_info{
+  flex: 4;
+  padding-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.item_info_title{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;  
+  color: #666666;
+}
+.item_info_price{
+  display: flex;
+  justify-content: space-between; /*两边放置*/
+}
+.info_price_num{
+  color: var(--themeColor);
+  font-size: 34rpx;
+}
+.info_price_tool{
+  display: flex;
+
+}
+.info_price_button{
+  flex: 1;
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #cccccc;
+}
+.info_price_count{
+  flex: 1;
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 底部栏 */
+.car_bottom_tool{
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 90rpx;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+  display: flex;
+}
+.tool_check_all{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tool_price{
+  flex: 5;
+  text-align: right;
+  padding-right: 15rpx;
+}
+.tool_price_text{
+  color: var(--themeColor);
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.tool_buy{
+  flex: 3;
+  background-color: var(--themeColor);
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

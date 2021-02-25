@@ -2,7 +2,68 @@
 
 <!-- 地址 -->
 <view class="cart_address_row">
-  <view class="adress_button">
+  <!-- 没有有地址时显示按钮 -->
+  <view class="adress_button" wx:if="{{!addressModel.userName}}">
     <button type="primary" plain="true" bindtap="clickAdressButton">获取收货地址</button>
   </view>
+  <!-- 显示地址信息 -->
+  <view class="adress_connect" wx:else>
+    <view class="user_info">
+      <view>{{addressModel.userName}}</view>
+      <view>{{addressModel.all}}</view>
+    </view>
+    <view class="user_phone">
+      {{addressModel.telNumber}}
+    </view>
+  </view>
+</view>
+
+<!-- 列表内容 -->
+<view class="car_list">
+  <view class="car_list_title">购物车</view>
+  <view class="car_list_content">
+    <view class="list_content_item" wx:for="{{myCarTableLists}}" wx:key="goods_id">
+      <!-- 复选框 -->
+      <view class="content_item_check">
+        <checkbox-group>
+          <checkbox checked="{{item.checked}}"></checkbox>
+        </checkbox-group>
+      </view>
+      <!-- 图片 -->
+      <navigator class="content_item_image">
+        <image mode="widthFix" src="{{item.goods_small_logo}}"/>
+      </navigator>
+      <!-- 信息 -->
+      <view class="content_item_info">
+        <view class="item_info_title">{{item.goods_name}}</view>
+        <view class="item_info_price">
+          <view class="info_price_num">¥{{item.goods_price}}</view>
+          <view class="info_price_tool">
+            <view class="info_price_button">-</view>
+            <view class="info_price_count">{{item.num}}</view>
+            <view class="info_price_button">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="car_bottom_tool">
+  <!-- 全选 -->
+  <view class="tool_check_all">
+    <checkbox-group>
+      <checkbox checked="{{allChecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+  <!-- 总价格 -->
+  <view class="tool_price">
+    <view class="tool_price_total">
+      总计:<text class="tool_price_text">¥999</text>
+    </view>
+    <view class="tool_price_tip">包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="tool_buy">结算(2)</view>
 </view>
