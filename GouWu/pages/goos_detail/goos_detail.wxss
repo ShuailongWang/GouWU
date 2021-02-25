@@ -1,1 +1,51 @@
 /* pages/goos_detail/goos_detail.wxss */
+
+.details_swiper swiper{
+  height: 65vw;
+  text-align: center;
+}
+.details_swiper image{
+  width: 60%;
+}
+
+.details_price_num{
+  color: var(--themeColor);
+  padding: 15rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.details_price_row{
+  display: flex;
+  border-top: 5rpx solid #dedede;
+  border-bottom: 5rpx solid #dedede;
+  padding: 10rpx 0;
+}
+.row_name{
+  flex: 5;
+  color: #000000;
+  font-size: 30rpx;
+  padding: 0 10rpx;
+
+  /*文字第二行超出显示 。。。*/
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;  /*第几行显示。。。*/
+}
+.row_collect{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1rpx solid #000000;
+}
+
+
+.details_info_title{
+  font-size: 32rpx;
+  color: var(--themeColor);
+  font-weight: 600;
+  padding: 20rpx;
+}
