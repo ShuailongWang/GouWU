@@ -18,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
+    //console.log(options);
     const goods_id = options.goods_id;
     this.getDatilsData(goods_id);
   },
@@ -38,7 +38,7 @@ Page({
         goodsObj:{
           goods_name : result.data.message.goods_name,
           goods_price : result.data.message.goods_price,
-          //ios 不识别webp图片，后台如果有jpg图片，则本地替换文字
+          //ios 不识别webp图片，后台如果有jpg图片，则本地替换文字 【不推荐】
           // goods_introduce : result.data.message.goods_introduce.replace(/\.webp/g,'.jps'),
           goods_introduce : result.data.message.goods_introduce,
           pics : result.data.message.pics,
@@ -52,7 +52,7 @@ Page({
 
   //点击图片 放大预览, 使用preview
   clickImageButton(e){
-    console.log(e);
+    //console.log(e);
     //点击的索引
     const index = e.currentTarget.dataset.index
 
@@ -65,9 +65,43 @@ Page({
 
     //显示图片
     wx.previewImage({
-      current : urlList[index],
+      current : urlList[index], // 当前的图片
       urls: urlList
     })
+  },
+
+  //点击加入购物车
+  clickCarButton(){
+    //获取购物车数据
+    let carList = wx.getStorageSync("kCarListKey") || [];
+    //判断商品id是否在购物车中
+    var index = -1;
+    for (var i in carList) {
+      if (this.Goods_info.goods_id === carList[i]){
+        index = i;
+        break;
+      }
+    }
+    //是否存在
+    if (index===-1) {
+      this.Goods_info.num=1;
+      carList.push(this.Goods_info);
+    } else {
+      carList[index].num++;
+    }
+
+    //保存
+    wx.setStorageSync('kCarListKey', carList);
+    wx.showToast({
+      title: '加入成功',
+      icon: 'sucess',
+      mask: true
+    })
+  },
+
+  //点击立即购买
+  clickBuyButton(){
+
   },
 
   /**

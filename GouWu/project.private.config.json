@@ -29,6 +29,12 @@
           "pathName": "pages/goos_detail/goos_detail",
           "query": "goods_id=43985",
           "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
         }
       ]
     }
