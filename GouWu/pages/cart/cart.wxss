@@ -1,1 +1,10 @@
 /* pages/cart/cart.wxss */
+
+
+/* 地址 */
+.adress_button{
+  padding: 20rpx;
+}
+.adress_button button{
+  width: 60%;
+}

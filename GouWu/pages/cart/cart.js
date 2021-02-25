@@ -15,6 +15,21 @@ Page({
 
   },
 
+  //点击地址按钮
+  clickAdressButton(){
+
+    //获取微信中填写的收货地址
+    wx-wx.chooseAddress({
+      success: (result) => {
+        console.log(result);
+      },
+      fail: (res) => {
+        console.log(res);
+      }
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
