@@ -49,7 +49,7 @@ page{
 .content_item_image{
   flex: 2;
   height: 200rpx;
-  widows: 80%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
