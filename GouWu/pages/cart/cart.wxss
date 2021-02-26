@@ -135,3 +135,9 @@ page{
   justify-content: center;
   align-items: center;
 }
+
+/* 无数据 */
+.table_no_data{
+  width: 30%;
+  height: 30%;
+}

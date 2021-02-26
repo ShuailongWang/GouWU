@@ -35,6 +35,11 @@
           "pathName": "pages/cart/cart",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "支付",
+          "pathName": "pages/pay/pay",
+          "scene": null
         }
       ]
     }

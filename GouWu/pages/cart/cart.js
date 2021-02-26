@@ -176,6 +176,32 @@ Page({
     }
   },
 
+  //点击购买结算按钮
+  clickButButton(){
+    //判断是否有收货地址
+    const address = this.data.addressModel;
+    if (!address.userName) {
+      wx.showToast({
+        title: '您还没有收货地址',
+        icon: 'none'
+      })
+      return;
+    }
+    //判断是否有商品
+    const totalNumber = this.data.totalNum;
+    if (totalNumber === 0){
+      wx.showToast({
+        title: '您还没有选购商品',
+        icon: 'none'
+      })
+      return;
+    }
+
+    //跳转支付
+    wx.navigateTo({
+      url: '/pages/pay/pay',
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

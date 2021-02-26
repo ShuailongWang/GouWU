@@ -21,33 +21,40 @@
 <!-- 列表内容 -->
 <view class="car_list">
   <view class="car_list_title">购物车</view>
-  <view class="car_list_content">
-    <view class="list_content_item" wx:for="{{myCarTableLists}}" wx:key="goods_id">
-      <!-- 复选框 -->
-      <view class="content_item_check">
-        <checkbox-group bindchange="clickCheckBox" data-goods_id="{{item.goods_id}}">
-          <checkbox checked="{{item.checked}}"></checkbox>
-        </checkbox-group>
-      </view>
-      <!-- 图片 -->
-      <navigator class="content_item_image">
-        <image mode="widthFix" src="{{item.goods_small_logo}}"/>
-      </navigator>
-      <!-- 信息 -->
-      <view class="content_item_info">
-        <view class="item_info_title">{{item.goods_name}}</view>
-        <view class="item_info_price">
-          <view class="info_price_num">¥{{item.goods_price}}</view>
-          <!-- 加减 -->
-          <view class="info_price_tool">
-            <view class="info_price_button" bindtap="clickEditNumButton" data-index="{{-1}}" data-goods_id="{{item.goods_id}}">-</view>
-            <view class="info_price_count">{{item.num}}</view>
-            <view class="info_price_button" bindtap="clickEditNumButton" data-index="{{1}}" data-goods_id="{{item.goods_id}}">+</view>
+  <block wx:if="{{myCarTableLists.length!==0}}">
+    <view class="car_list_content">
+      <view class="list_content_item" wx:for="{{myCarTableLists}}" wx:key="goods_id">
+        <!-- 复选框 -->
+        <view class="content_item_check">
+          <checkbox-group bindchange="clickCheckBox" data-goods_id="{{item.goods_id}}">
+            <checkbox checked="{{item.checked}}"></checkbox>
+          </checkbox-group>
+        </view>
+        <!-- 图片 -->
+        <navigator class="content_item_image">
+          <image mode="widthFix" src="{{item.goods_small_logo}}"/>
+        </navigator>
+        <!-- 信息 -->
+        <view class="content_item_info">
+         <view class="item_info_title">{{item.goods_name}}</view>
+          <view class="item_info_price">
+            <view class="info_price_num">¥{{item.goods_price}}</view>
+            <!-- 加减 -->
+            <view class="info_price_tool">
+              <view class="info_price_button" bindtap="clickEditNumButton" data-index="{{-1}}" data-goods_id="{{item.goods_id}}">-</view>
+              <view class="info_price_count">{{item.num}}</view>
+              <view class="info_price_button" bindtap="clickEditNumButton" data-index="{{1}}" data-goods_id="{{item.goods_id}}">+</view>
+            </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
+  </block>
+  <block wx:else>
+    <view class="table_no_data">
+      <image mode="widthFix" src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2147548107,1567157323&fm=26&gp=0.jpg" />
+    </view>
+  </block>
 </view>
 
 <!-- 底部工具栏 -->
@@ -66,5 +73,5 @@
     <view class="tool_price_tip">包含运费</view>
   </view>
   <!-- 结算 -->
-  <view class="tool_buy">结算({{totalNum}})</view>
+  <view class="tool_buy" bindtap="clickButButton">结算({{totalNum}})</view>
 </view>

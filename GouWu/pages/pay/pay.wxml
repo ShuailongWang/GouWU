@@ -1,2 +1,53 @@
 <!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+
+
+<!-- 地址 -->
+<view class="cart_address_row">
+  <!-- 显示地址信息 -->
+  <view class="adress_connect">
+    <view class="user_info">
+      <view>{{addressModel.userName}}</view>
+      <view>{{addressModel.all}}</view>
+    </view>
+    <view class="user_phone">
+      {{addressModel.telNumber}}
+    </view>
+  </view>
+</view>
+
+<!-- 列表内容 -->
+<view class="car_list">
+  <view class="car_list_title">购物车</view>
+    <view class="car_list_content">
+      <view class="list_content_item" wx:for="{{myCarTableLists}}" wx:key="goods_id">
+        <!-- 图片 -->
+        <navigator class="content_item_image">
+          <image mode="widthFix" src="{{item.goods_small_logo}}"/>
+        </navigator>
+        <!-- 信息 -->
+        <view class="content_item_info">
+         <view class="item_info_title">{{item.goods_name}}</view>
+          <view class="item_info_price">
+            <view class="info_price_num">¥{{item.goods_price}}</view>
+            <!-- 加减 -->
+            <view class="info_price_tool">
+              <view class="info_price_count">X {{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="car_bottom_tool">
+  <!-- 总价格 -->
+  <view class="tool_price">
+    <view class="tool_price_total">
+      总计:<text class="tool_price_text">¥{{totalPrice}}</text>
+    </view>
+    <view class="tool_price_tip">包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="tool_buy" bindtap="clickButButton">支付({{totalNum}})</view>
+</view>
