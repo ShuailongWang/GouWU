@@ -1,4 +1,8 @@
 // pages/auth/auth.js
+
+import {UserLogin} from "../../request/asyncWx.js";
+import {request} from "../../request/index.js";
+
 Page({
 
   /**
@@ -6,6 +10,45 @@ Page({
    */
   data: {
 
+  },
+
+  //获取授权
+  async getuserinfo(e){
+   console.log(e);
+   //获取用户信息
+   const encryptedData = e.detail.encryptedData;
+   const rawData = e.detail.rawData;
+   const iv = e.detail.iv;
+   const signature = e.detail.signature;
+
+    //获取小程序code值
+   const response = await UserLogin();
+   const code = response.code;
+   
+   let parames = {encryptedData, rawData, iv, signature, code};
+
+  //  //发送请求获取用户token值
+  //  request({url:"https://api-hmugo-web.itheima.net/api/public/v1/users/wxlogin", data:parames, method:"post"})
+  //  .then(result => {
+  //   console.log(result);
+  //   const token = result.token;
+  //   if (token) {
+  //     wx.setStorageSync('kTokenKey', token);
+  //     wx.navigateBack({
+  //       delta: 1,
+  //     })
+  //   }
+  //  })
+  //  .catch(error => {
+  //   console.log(error);
+  //  })
+
+    //测试token
+    wx.setStorageSync('kTokenKey', "woshiceshitoken123123");
+    wx.navigateBack({
+      delta: 1,
+    })
+    
   },
 
   /**

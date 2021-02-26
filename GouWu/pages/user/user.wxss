@@ -1,1 +1,50 @@
 /* pages/user/user.wxss */
+
+page{
+  background-color: #edece8;
+}
+
+.mine_user_info{
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+}
+.user_image_connect{
+  position: relative;
+}
+.user_back_iamg{
+  height: 50vh;
+  /* 高斯模糊 */
+  filter: blur(10rpx);
+}
+.user_info_connect{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user_icon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_name{
+  color: #ffffff;
+  font-size: 40rpx;
+  font-weight: 600;
+  padding-top: 40rpx;
+}
+.user_login{
+  width: 200rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
+  border: 1rpx solid greenyellow;
+  color: greenyellow;
+  font-size: 38rpx;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}

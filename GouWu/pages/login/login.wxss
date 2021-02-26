@@ -1,1 +1,11 @@
 /* pages/login/login.wxss */
+
+.login_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40rpx;
+}
+.login_button button{
+  width: 70%;
+}

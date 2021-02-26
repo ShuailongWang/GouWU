@@ -1,1 +1,11 @@
 /* pages/auth/auth.wxss */
+
+.auth_button{
+  padding-top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth_button button{
+  width: 70%;
+}

@@ -1,2 +1,15 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+
+<!-- 头像信息 -->
+<view class="mine_user_info">
+  <view class="user_image_connect" wx:if="{{userModel.avatarUrl}}">
+    <image class="user_back_iamg" src="{{userModel.avatarUrl}}" />
+    <view class="user_info_connect">
+      <image class="user_icon" src="{{userModel.avatarUrl}}"/>
+      <view class="user_name">{{userModel.nickName}}</view>
+    </view>
+  </view>
+  <view class="user_login" wx:else>
+    <navigator url="/pages/login/login">登录</navigator>
+  </view>
+</view>
