@@ -25,7 +25,7 @@
     <view class="list_content_item" wx:for="{{myCarTableLists}}" wx:key="goods_id">
       <!-- 复选框 -->
       <view class="content_item_check">
-        <checkbox-group>
+        <checkbox-group bindchange="clickCheckBox" data-goods_id="{{item.goods_id}}">
           <checkbox checked="{{item.checked}}"></checkbox>
         </checkbox-group>
       </view>
@@ -38,10 +38,11 @@
         <view class="item_info_title">{{item.goods_name}}</view>
         <view class="item_info_price">
           <view class="info_price_num">¥{{item.goods_price}}</view>
+          <!-- 加减 -->
           <view class="info_price_tool">
-            <view class="info_price_button">-</view>
+            <view class="info_price_button" bindtap="clickEditNumButton" data-index="{{-1}}" data-goods_id="{{item.goods_id}}">-</view>
             <view class="info_price_count">{{item.num}}</view>
-            <view class="info_price_button">+</view>
+            <view class="info_price_button" bindtap="clickEditNumButton" data-index="{{1}}" data-goods_id="{{item.goods_id}}">+</view>
           </view>
         </view>
       </view>
@@ -53,17 +54,17 @@
 <view class="car_bottom_tool">
   <!-- 全选 -->
   <view class="tool_check_all">
-    <checkbox-group>
+    <checkbox-group bindchange="clickAllCeckedButton">
       <checkbox checked="{{allChecked}}">全选</checkbox>
     </checkbox-group>
   </view>
   <!-- 总价格 -->
   <view class="tool_price">
     <view class="tool_price_total">
-      总计:<text class="tool_price_text">¥999</text>
+      总计:<text class="tool_price_text">¥{{totalPrice}}</text>
     </view>
     <view class="tool_price_tip">包含运费</view>
   </view>
   <!-- 结算 -->
-  <view class="tool_buy">结算(2)</view>
+  <view class="tool_buy">结算({{totalNum}})</view>
 </view>
