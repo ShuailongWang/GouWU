@@ -96,3 +96,8 @@ page{
   font-size: 30rpx;
   font-weight: 600;
 }
+
+/* 收藏 */
+.isCollection{
+  color: var(--themeColor);
+}

@@ -1,2 +1,35 @@
 <!--pages/collection/collection.wxml-->
-<text>pages/collection/collection.wxml</text>
+
+<SectionTabs sectionTabList="{{sectionTabList}}" bindclickSection="clickSection">
+  <!-- main -->
+  <view class="collection_main">
+    <!-- 标签 -->
+    <view class="collection_tips">
+      <view class="collection_tip_text active">全部</view>
+      <view class="collection_tip_text">正在热卖</view>
+      <view class="collection_tip_text">即将上限</view>
+    </view>
+
+    <!-- 内容 -->
+    <view class="collection_connect">
+      <navigator class="goods_item" wx:for="{{collectionList}}" wx:key="goods_id"
+        url="/pages/goos_detail/goos_detail?goods_id={{item.goods_id}}">
+          <!--左侧图片-->
+          <view class="goods_imag_wrap">
+            <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" />
+          </view>
+          <!--右侧数据-->
+          <view class="goods_info_wrap">
+            <!--标题-->
+            <view class="goods_info_name">
+              {{item.goods_name}}
+            </view>
+            <!--价格-->
+            <view class="goods_info_price">
+              ¥{{item.goods_price}}
+            </view>
+          </view>
+        </navigator>
+    </view>
+  </view>
+</SectionTabs>

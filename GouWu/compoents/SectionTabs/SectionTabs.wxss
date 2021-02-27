@@ -1,7 +1,9 @@
 /* compoents/SectionTabs/SectionTabs.wxss */
 
+
 .section_title {
   display: flex;
+  background-color: #ffffff;
 }
 .title_item{
   display: flex;

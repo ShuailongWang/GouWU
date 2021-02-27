@@ -1,0 +1,6 @@
+<!--compoents/Upimg/Upimg.wxml-->
+
+<view class="up_img_main">
+  <image class="up_img_main_image" src="{{src}}" />
+  <icon class="up_img_main_icon" type="clear" size="23" color="red"></icon>
+</view>

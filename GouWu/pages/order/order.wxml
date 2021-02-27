@@ -1,2 +1,20 @@
 <!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+
+<SectionTabs sectionTabList="{{sectionTabList}}" bindclickSection="clickSection">
+  <view class="order_content">
+    <view class="oeder_item">
+      <view class="order_number">
+        <view class="order_number_title">订单编号</view>
+        <view class="order_number_value">125098765432</view>
+      </view>
+      <view class="order_price">
+        <view class="order_price_title">订单价格</view>
+        <view class="order_price_value">¥12000</view>
+      </view>
+      <view class="order_date">
+        <view class="order_date_title">订单日期</view>
+        <view class="order_date_value">2021-12-11 12:00:00</view>
+      </view>
+    </view>
+  </view>
+</SectionTabs>

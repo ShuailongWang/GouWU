@@ -1,1 +1,63 @@
 /* pages/feedback/feedback.wxss */
+
+page{
+  background-color: #dedede;
+}
+.feedback_main{
+  padding: 0 20rpx;
+}
+
+/* 标题，标签 */
+.faceback_title{
+  padding: 20rpx;
+  color: #666666;
+}
+.faceback_tips{
+  display: flex;
+  flex-wrap: wrap;  /*元素换行*/
+}
+.faceback_tips text{
+  width: 30%;
+  padding: 10rpx;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 20rpx 10rpx;
+}
+
+/* 输入 */
+.faceback_input{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+.faceback_input textarea{
+  padding: 15rpx;
+}
+
+/* 添加图片 */
+.faceback_tool{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.faceback_tool button{
+  margin: 0;
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 40rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: #ccc;
+}
+.up_img_item{
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+/* 提交按钮 */
+.faceback_submit{
+  margin-top: 20rpx;
+}

@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsObj:{}
+    goodsObj:{},
+    isCollection : false
   },
   //全局对象
   Goods_info:{},
@@ -18,9 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //console.log(options);
-    const goods_id = options.goods_id;
-    this.getDatilsData(goods_id);
+
   },
 
   //详情接口
@@ -30,7 +29,19 @@ Page({
       //console.log(result);
 
       this.Goods_info = result.data.message;
+      //拿到收藏数据
+      let collectionList = wx.getStorageSync('kMyCollectionKey') || [];
+      var isCollection = false;
+      for (var i in collectionList) {
+        if (collectionList[i].goods_id === this.Goods_info.goods_id) {
+          isCollection = true;
+          break;
+        }
+      }
+      //
       this.setData({
+        isCollection : isCollection,
+
         // 全部数据
         // goodsObj:result.data.message
 
@@ -38,6 +49,7 @@ Page({
         goodsObj:{
           goods_name : result.data.message.goods_name,
           goods_price : result.data.message.goods_price,
+          goods_id : result.data.message.goods_id,
           //ios 不识别webp图片，后台如果有jpg图片，则本地替换文字 【不推荐】
           // goods_introduce : result.data.message.goods_introduce.replace(/\.webp/g,'.jps'),
           goods_introduce : result.data.message.goods_introduce,
@@ -105,6 +117,45 @@ Page({
 
   },
 
+  //点击收藏
+  clickCollectionButton(){
+    //拿到收藏数据
+    let collectionList = wx.getStorageSync('kMyCollectionKey') || [];
+    let isCollection = false;
+    var index = -1;
+    const goods_info = this.Goods_info;
+    for (var i in collectionList) {
+      if (collectionList[i].goods_id === goods_info.goods_id) {
+        index = i;
+        break;
+      }
+    }
+    //判断是否收藏
+    var message = "";
+    if (index === -1){
+      //不存在，添加
+      isCollection = true;
+      collectionList.push(goods_info);
+      message = "收藏成功";
+    } else {
+      //已收藏，删除
+      isCollection = false;
+      collectionList.splice(index, 1);
+      message = "取消收藏";
+    }
+
+    wx.showToast({
+      title: message,
+      icon: 'sucess',
+      mask: true
+    })
+
+    wx.setStorageSync('kMyCollectionKey', collectionList);
+    this.setData({
+      isCollection : isCollection
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -116,7 +167,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    //console.log(options);
+    const pages = getCurrentPages();
+    const currentpage = pages[pages.length-1];
 
+    const goods_id = currentpage.options.goods_id;
+    this.getDatilsData(goods_id);
   },
 
   /**

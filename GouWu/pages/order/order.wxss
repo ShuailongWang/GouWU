@@ -1,1 +1,35 @@
 /* pages/order/order.wxss */
+
+.order_content{
+  
+}
+.oeder_item{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+  color: #666666;
+}
+/* 编号 */
+.order_number{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+/* 价格 */
+.order_price{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.order_price_value{
+  color: var(--themeColor);
+  font-size: 32rpx;
+  font-weight: 600;
+}
+/* 日期 */
+.order_date{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}

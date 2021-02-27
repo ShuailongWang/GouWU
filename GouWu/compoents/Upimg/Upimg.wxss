@@ -1,0 +1,17 @@
+/* compoents/Upimg/Upimg.wxss */
+
+.up_img_main{
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+}
+.up_img_main_image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.up_img_main_icon{
+  position: absolute;
+  top: -22rpx;
+  right: -22rpx;
+}

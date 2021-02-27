@@ -1,1 +1,58 @@
 /* pages/collection/collection.wxss */
+
+page{
+  background-color: #f3f4f6;
+}
+
+.collection_main{
+
+}
+
+/* 标签 */
+.collection_tips{
+  display: flex;
+  padding: 20rpx 0;
+}
+.collection_tip_text{
+  border: 1rpx solid #ccc;
+  margin-left: 25rpx;
+  padding: 10rpx;
+  text-align: center;
+}
+.active{
+  color: var(--themeColor);
+  border-color: currentColor;
+}
+
+/* 列表 */
+.goods_item{
+  display: flex;
+  border-bottom: 1rpx solid #cccccc;
+  padding: 0 20rpx;
+  background-color: #ffffff;
+}
+.goods_imag_wrap{
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+.goods_imag_wrap image{
+  width: 70%;
+}
+
+.goods_info_wrap{
+  flex: 3;
+  display: flex;
+  flex-direction: column; /*方向*/
+  justify-content: space-around;
+}
+.goods_info_name{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;  /*2省略号*/
+}
+.goods_info_price{
+  color: var(--themeColor);
+  font-size: 32rpx;
+}

@@ -3,6 +3,7 @@
 .goods_item{
   display: flex;
   border-bottom: 1rpx solid #cccccc;
+  padding: 0 20rpx;
 }
 
 /* 左 */

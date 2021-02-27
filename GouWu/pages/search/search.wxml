@@ -1,2 +1,14 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+
+<!-- 搜索框 -->
+<view class="search_bar">
+  <input class="search_input" value="{{inputText}}" placeholder="请输入要搜索的内容" bindinput="inputValueChange"></input>
+  <button class="search_cancel" bindtap="clickCancelButton">取消</button>
+</view>
+
+<!-- 搜索列表 -->
+<view class="search_content">
+  <navigator class="content_item" wx:for="{{searchTableList}}" wx:key="goods_id" url="/pages/goos_detail/goos_detail?goods_id={{item.goods_id}}">
+    {{item.goods_name}}
+  </navigator>
+</view>

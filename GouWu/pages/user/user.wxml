@@ -13,3 +13,58 @@
     <navigator url="/pages/login/login">登录</navigator>
   </view>
 </view>
+
+<!-- 内容 -->
+<view class="mine_connect">
+  <view class="mine_main">
+    <!-- 菜单 -->
+    <view class="mine_menu">
+      <!-- menu -->
+      <view class="menu_item" wx:for="{{menuList}}" wx:key="id">
+        <navigator url="{{item.url}}">
+          <view class="menu_item_num">{{item.num}}</view>
+          <view class="menu_item_name">{{item.title}}</view>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 订单 -->
+    <view class="mine_order">
+      <!-- 我的订单 -->
+      <view class="mine_order_title">我的订单</view>
+      <view class="mine_order_connect">
+        <navigator url="/pages/order/order?type=1">
+          <view class="order_list_icon iconfont icon-ding_dan"></view>
+          <view class="order_list_title">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order/order?type=2">
+          <view class="order_list_icon iconfont icon-fukuantongzhi"></view>
+          <view class="order_list_title">代付款</view>
+        </navigator>
+        <navigator url="/pages/order/order?type=3">
+          <view class="order_list_icon iconfont icon-receipt-address"></view>
+          <view class="order_list_title">待收货</view>
+        </navigator>
+        <navigator>
+          <view class="order_list_icon iconfont icon-tuihuotuikuan_dianpu"></view>
+          <view class="order_list_title">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 收货地址 -->
+    <view class="mine_adress">收货地址</view>
+    <!-- 联系客服，意见，关于 -->
+    <view class="mine_about">
+      <view class="mine_about_item about_item_kefu about_item_line">
+        <text>联系客服</text>
+        <text>400-618-4000</text>
+      </view>
+      <navigator class="mine_about_item about_item_line" url="/pages/feedback/feedback">意见反馈</navigator>
+      <view class="mine_about_item">关于我们</view>
+    </view>
+    <!-- 分享 -->
+    <view class="mine_shared">邀请好友</view>
+  </view>
+</view>
+

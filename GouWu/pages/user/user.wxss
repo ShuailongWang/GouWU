@@ -48,3 +48,89 @@ page{
   padding: 20rpx;
   border-radius: 10rpx;
 }
+
+
+/* 底部列表 */
+.mine_connect{
+  position: relative;
+}
+.mine_main{
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+}
+.mine_menu{
+  display: flex;
+  background-color: #ffffff;
+  padding: 20rpx;
+  color: #666666;
+}
+.menu_item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.menu_item_num{
+  color: var(--themeColor);
+}
+
+/* 订单 */
+.mine_order{
+  background-color: #ffffff;
+  margin-top: 30rpx;
+}
+.mine_order_title{
+  padding: 20rpx;
+  border-bottom: 1px solid #edece8;
+}
+.mine_order_connect{
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mine_order_connect navigator{
+  padding: 15rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.order_list_icon{
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+
+/* 收货地址 */
+.mine_adress{
+  background-color: #ffffff;
+  margin-top: 30rpx;
+  padding: 20rpx;
+}
+
+/* 关于 */
+.mine_about{
+  background-color: #ffffff;
+  margin-top: 30rpx;
+}
+.mine_about_item{
+  padding: 20rpx;
+}
+.about_item_kefu{
+  display: flex;
+  justify-content: space-between;
+}
+.about_item_line{
+  border-bottom: 1px solid #edece8;
+}
+
+/* 分享 */
+.mine_shared{
+  background-color: #ffffff;
+  margin-top: 30rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}

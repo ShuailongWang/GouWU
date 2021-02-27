@@ -5,7 +5,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userModel : {}
+    userModel : {},
+    collectionNum : 0,
+    menuList :[
+      {
+        id:0,
+        title:"收藏的店铺",
+        num:0,
+        url:"/pages/collection/collection"
+      },
+      {
+        id:1,
+        title:"收藏的商品",
+        num:0,
+        url:"/pages/collection/collection"
+      },
+      {
+        id:2,
+        title:"关注的商品",
+        num:0,
+        url:"/pages/collection/collection"
+      },
+      {
+        id:3,
+        title:"我的足迹",
+        num:0,
+        url:"/pages/collection/collection"
+      }
+    ]
   },
 
   /**
@@ -27,9 +54,12 @@ Page({
    */
   onShow: function () {
     const userInfo = wx.getStorageSync('kUserInfoKey');
-
+    const collectiionList = wx.getStorageSync('kMyCollectionKey') || [];
+    let menuList = this.data.menuList;
+    menuList[1].num = collectiionList.length;
     this.setData({
-      userModel:userInfo
+      userModel:userInfo,
+      menuList : menuList
     })
   },
 

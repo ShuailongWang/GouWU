@@ -1,1 +1,45 @@
 /* pages/search/search.wxss */
+
+page{
+  background-color: #dedede;
+  padding: 20rpx;
+}
+
+/* 搜索框 */
+.search_bar{
+  height: 60rpx;
+  display: flex;
+}
+.search_input{
+  flex: 5;
+  height: 100%;
+  background-color: #ffffff;
+  padding-left: 30rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.search_cancel{
+  flex: 1;
+  width: 100rpx;
+  height: 100%;
+  font-size: 26rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 列表 */
+.search_content{
+  margin-top: 20rpx;
+}
+.content_item{
+  background-color: #ffffff;
+  font-size: 26rpx;
+  padding: 15rpx;
+  border-bottom: 1px solid #ccc;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

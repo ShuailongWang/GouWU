@@ -1,2 +1,31 @@
 <!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+
+<SectionTabs sectionTabList="{{sectionTabList}}" bindclickSection="clickSection">
+  <view class="feedback_main">
+    <!-- 标题 -->
+    <view class="faceback_title">问题的种类</view>
+    <!-- 标签 -->
+    <view class="faceback_tips">
+      <text>功能建议</text>
+      <text>购买遇到问题</text>
+      <text>性能问题</text>
+      <text>其它</text>
+    </view>
+    <!-- 输入框 -->
+    <view class="faceback_input">
+      <textarea value="{{inputText}}" placeholder="请输入要反馈的内容" bindinput="textValueChange"></textarea>
+      <!-- 添加图片工具 -->
+      <view class="faceback_tool">
+        <button style="width:90rpx;font-size:60rpx;padding:0;margin:0;margin-left:20rpx;margin-top:20rpx;" bindtap="clickAddImgButton">+</button>
+        <!-- 上传的图片 -->
+        <view class="up_img_item" wx:for="{{chooseImgList}}" wx:key="*this"  bindtap="clickDeleteButton" data-index="{{index}}">
+          <Upimg src="{{item}}"></Upimg>
+        </view>
+      </view>
+    </view>
+    <!-- 提交按钮 -->
+    <view class="faceback_submit">
+      <button type="primary" bindtap="clickSubmitButton">提交</button>
+    </view>
+  </view>
+</SectionTabs>

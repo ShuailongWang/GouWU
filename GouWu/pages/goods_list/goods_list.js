@@ -61,7 +61,8 @@ Page({
   onLoad: function (options) {
     //页面传递参数的地方
     //console.log(options);
-    this.QueryParams.cid = options.cid;
+    this.QueryParams.cid = options.cid || "";
+    this.QueryParams.query = options.query || "";
 
     //获取列表
     this.getGoodsList();

@@ -4,7 +4,7 @@
   <!--轮播图-->
   <view class="details_swiper">
     <swiper indicator-dots="true" autoplay="true" circular="true" interval="2000">
-      <swiper-item wx:for="{{goodsObj.pics}}" wx:key="pics_id" bindtap="clickImageButton" data-index="{{index}}">
+      <swiper-item wx:for="{{goodsObj.pics}}" wx:key="pics_id" bindtap="clickImageButton">
         <image mode="widthFix" src="{{item.pics_mid}}"/>
       </swiper-item>
     </swiper>
@@ -14,7 +14,7 @@
   <view class="details_price_num"> ¥ {{goodsObj.goods_price}}</view>
   <view class="details_price_row">
     <view class="row_name">{{goodsObj.goods_name}}</view>
-    <view class="row_collect">
+    <view class="row_collect {{isCollection?'isCollection':''}}" bindtap="clickCollectionButton" data-goods_id="{{goodsObj.goods_id}}">
       <text class="iconfont icon-shoucang"></text>
       <view class="row_collection_title">收藏</view>
     </view>

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "SectionTabs" : "../../compoents/SectionTabs/SectionTabs"
+  },
   "navigationBarTitleText": "订单"
 }
